@@ -1,0 +1,35 @@
+<div *ngIf="show_modal">
+    <div class="modal">
+        <!-- Modal content -->
+    <div class="modal-content">
+        <span (click)="cerrar()" class="close">&times;</span>
+        <table>
+            <thead>
+                <th>Usuario</th><th>Película</th><th>Fecha Alquiler</th><th>Fecha Limite</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let order of orders">
+                    <td>
+                        {{order.User.name}}
+                    </td>
+                    <td>
+                        {{order.Movie.title}}
+                    </td>
+                    <td>
+                        {{order.RentalDate|date}}
+                    </td>
+                    <td>
+                        {{order.ReturnDay|date}}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div>
+         <br/>   
+        <button (click)="cerrar()" class="button">
+            Cerrar
+        </button>
+        </div>
+    </div>
+    </div>
+</div>

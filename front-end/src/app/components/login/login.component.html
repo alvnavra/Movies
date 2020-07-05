@@ -1,0 +1,29 @@
+<div class="login">
+    <div class="login__base">
+        <div *ngIf="error">
+            <div (click)="error=false" class="login__error">
+                usuario o contraseña incorrectos
+            </div>
+        </div>
+        <p class="login__logo">
+            Inicio de sesión
+        </p>
+        <div class="login__email">
+            <i class="far fa-envelope login__icon--email"></i>
+            <input [(ngModel)]="login_obj.email" class="login__email--bar" type="text" name="email" placeholder="Email">
+        </div>
+        <div class="login__password">
+            <i class="fas fa-lock login__icon--pass"></i>
+            <input [(ngModel)]="login_obj.password" class="login__password--bar" type="password" name="pass" placeholder="Password">    
+        </div>
+        <button [disabled]="isDisabled()" class="login__button" (click)="login()">
+            Iniciar sesión
+        </button>
+        <p class="login__pregunta">
+            ¿Aun no eres usuario?
+        </p>
+        <button class="login__signup" (click)="registrarse()">
+            ¡Registrate!
+        </button>
+    </div>
+</div>

@@ -1,0 +1,7 @@
+<div class="order__form-inline" *ngIf="mostrar">
+    <label for="forder">F.Alquiler</label>
+    <input [(ngModel)]="order.RentalDate" type="date" id="forder" placeholder="Fecha Alquiler" name="forder">
+    <label for="flimit">Fecha Límite:</label>
+    <input [(ngModel)]="order.ReturnDay" type="date" id="flimit" placeholder="Límte de Entrega" name="flimit">
+    <button (click)="confirmar()">Confirmar</button>
+</div>

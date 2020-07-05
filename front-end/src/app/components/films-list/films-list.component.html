@@ -1,0 +1,30 @@
+<!-- Intento de colocar el show for title pero no funciono -->
+<div class="base">
+    <div class="mostrada" *ngFor="let pelicula of MovieService.films">
+        <p class="mostrada__titulo">{{pelicula.title}}</p>
+        <a routerLink="/info" routerLinkActive="active-link">
+        <img class="mostrada__img" (click)="MovieService.locateFilm(pelicula)"
+            src="https://image.tmdb.org/t/p/w200/{{pelicula.poster_path}}" 
+            alt="poster">
+        </a>
+    </div>
+    
+    <div class="movies">
+        <p class="movies__logo">
+            Películas del Pinilla
+        </p>
+        <select name="generos" class="movies__generos">
+            <option selected value="0">Aleatoria</option>
+            <option value="1">Popularidad</option>
+        </select>
+        <div class="first">
+            <div class="movies__base" *ngFor="let pelicula of pelisMostrar">
+                <a routerLink="/info" routerLinkActive="active-link" class="movies__a">
+                    <img class="movies__img" (click)="MovieService.locateFilm(pelicula)" src="https://image.tmdb.org/t/p/w200/{{pelicula.poster_path}}" alt="poster">
+                    <p class="movies__title">{{pelicula.title}}</p>
+                </a>
+
+            </div>
+        </div>
+    </div>
+</div>

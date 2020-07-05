@@ -1,0 +1,16 @@
+<div class="info">
+    <div class="info__base">
+        <span>
+            <p class="info__logo">{{movieShow.title}}</p>
+            <img class="info__img" src="https://image.tmdb.org/t/p/w200/{{movieShow.poster_path}}" alt="poster">
+            <p class="info__descrip">{{movieShow.overview}}</p>
+            <p>
+            <button (click)="volver()" class="info__button">Volver</button>
+            <span>&nbsp;<button *ngIf="user" class="info__button" (click)="show_child=true">Alquilar</button></span>
+            </p>
+        </span>
+        <span *ngIf="show_child">
+            <app-order [user_and_movie]="user_and_movie"></app-order>
+        </span>
+    </div>
+</div> 

@@ -1,0 +1,28 @@
+<div class="signup">
+    <div class="signup__base">
+        <p class="signup__logo">
+            Registro
+        </p>
+        <div class="signup__nombre">
+            <i class="fas fa-user signup__icon--user"></i>
+            <input [(ngModel)]="user.name" class="signup__nombre--bar" type="text" name="nombre" placeholder="Nombre">
+        </div>
+        <div class="signup__email">
+            <i class="far fa-envelope signup__icon--email"></i>
+            <input [(ngModel)]="user.email" class="signup__email--bar" type="text" name="email" placeholder="Email">
+        </div>
+        <div class="signup__password">
+            <i class="fas fa-lock signup__icon--pass"></i>
+            <input [(ngModel)]="user.password" class="signup__password--bar" type="password" name="pass" placeholder="Password">    
+        </div>
+        <button [disabled]="isDisabled()"  (click)="registrarse()" class="signup__button">
+            Registrarse
+        </button>
+        <p class="signup__pregunta">
+            ¿Ya eres usuario?
+        </p>
+        <button class="signup__signup" (click)="iniciarSesion()">
+            ¡Iniciar sesión!
+        </button>
+    </div>
+</div>
